@@ -1,0 +1,190 @@
+.header-menu
+{
+    width: 100%;
+    background-color: #131521;
+    color: gray;
+    float: left;
+}
+.content
+{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.current-time
+{
+    margin-left: 10px;
+    margin-top: 5px;
+    font-family: 'Odibee Sans', cursive;
+    font-size: 20px;
+    float: left;
+}
+
+.timer-div{
+    padding-bottom: 30px;
+    width: 100px !important;
+}
+
+.logo
+{
+    float: left;
+    height: 50px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+#home
+{
+    margin-top: 3px;
+    color: #cf3476;
+    width: 100%;
+    width: 50px;
+   font-size: 25px;
+   float: left;
+
+    
+}
+#home:hover
+{
+    cursor: pointer;
+}
+.menu-item
+{
+    margin-bottom: 15px;
+    font-size: 30px;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.menu-item:hover
+{
+    cursor: pointer;
+}
+.login-btn
+{
+    background-color: #cf3476;
+    border: 0px;
+    border-radius: 10px;
+    height: 30px;
+    width: 90px;
+    font-size: 10px;
+}
+.login-btn:hover
+{
+    cursor: pointer;
+}
+.register-button
+{
+    background-color: rgb(53, 152, 254);
+    border: 0px;
+    border-radius: 10px;
+    height: 30px;
+    width: 90px;
+    font-size: 10px;
+}
+.register-button:hover
+{
+    cursor: pointer;
+}
+body{
+    background-color: #1c1d27;
+    font-family: 'Francois One', sans-serif;
+}
+
+iframe{
+    height: 800px;
+    width: 1320px;
+    display: block;
+    margin: auto;
+    border: 30px solid #131521;
+    border-radius: 20px;
+    margin-top: 7%;
+}
+
+.footer{
+    background: #131521;
+    color:white;
+}
+
+ul li a{
+    color :white;
+}
+
+ul li a:hover{
+    color:  white;
+    text-emphasis-style: none;
+}
+
+iframe, object, embed {
+    max-width: 100%;
+}
+
+.btn-group{
+    margin-top: 1%;
+    border-radius: 10px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.ul-menu li{
+    float:left;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.ul-menu{
+    padding-top: 8px;
+}
+
+.menu-box{
+    height: 50px;
+}
+
+.menu-box:hover{
+    color: #cf3476;
+}
+
+.game-info{
+    border: 10px solid #131521;
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('http://dev2.slicejack.com/fullscreen-video-demo/img/videoframe.jpg') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
+}
