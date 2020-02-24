@@ -14,8 +14,8 @@
 </head>
 
 <header>
-        <!-- Live background -->
-    <div class="fullscreen-bg"> 
+    <!-- Live background -->
+    <div class="fullscreen-bg">
         <video loop muted autoplay class="fullscreen-bg__video">
             <source src="Images/bgbg.mp4" type="video/mp4">
         </video>
@@ -46,15 +46,35 @@
             </div>
             <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
                 <ul class="ul-menu">
-                    <li><button onclick="" class="login-btn"><i class="fa fa-sign-in"
-                                aria-hidden="true"></i> Login</button></li>
-                    <li><button onclick="" class="register-button"><i class="fa fa-shield"
-                                aria-hidden="true"></i> Register</button></li>
+                    <li><a href="#login_form"><button onclick="" class="login-btn"><i class="fa fa-sign-in"
+                                    aria-hidden="true"></i> Login</button></a></li>
+                    <li><button onclick="" class="register-button"><i class="fa fa-shield" aria-hidden="true"></i>
+                            Register</button></li>
                 </ul>
             </div>
 
+            <a href="#x" class="overlay" id="login_form"></a>
 
-            
+
+
+            <div class="popup">
+                
+                        <h2>Welcome Guest!</h2>
+                        <p>Please enter your login and password here</p>
+                        <div>
+                            <label for="login">Login</label>
+                            <input type="text" id="login" value="" />
+                        </div>
+                        <div>
+                            <label for="password">Password</label>
+                            <input type="password" id="password" value="" />
+                        </div>
+                        <input type="button" class="register-button" value="Log In" />
+
+
+                <a class="close" href="#close"></a>
+            </div>
+
         </div>
     </div>
 </header>
@@ -72,7 +92,7 @@
         </div>
     </div>
     </div>
-    
+
 </body>
 <footer>
     <div class="mt-5 pt-5 pb-5 footer">

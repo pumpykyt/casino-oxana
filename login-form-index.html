@@ -23,34 +23,114 @@
     <!-- Menu -->
     <div class="header-menu fixed-top">
         <div class="content row">
-            <div class="col-lg-2 col-md-2 col-xs-12 menu-box">
+            <div class="col-lg-2 col-md-0 col-xs-12 menu-box">
                 <img class="logo menu-item" src="Images/nnl.png " alt="">
 
             </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 menu-box timer-div">
+            <div class="col-lg-2 col-md-0 col-xs-12 menu-box timer-div">
                 <p class="current-time" id="current-time">f</p>
 
             </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 menu-box">
+            <div class="col-lg-2 col-md-3 col-xs-12 menu-box">
                 <p onclick="" class="menu-item"> <span style="color: #cf3476;">S</span>LOTS</p>
 
             </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 menu-box">
+            <div class="col-lg-2 col-md-3 col-xs-12 menu-box">
                 <p onclick="" class="menu-item"> <span style="color: #cf3476;">L</span>IVE
                     DEALERS</p>
             </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 menu-box">
+            <div class="col-lg-2 col-md-3 col-xs-12 menu-box">
                 <p onclick="" class="menu-item"> <span style="color: #cf3476;">R</span>OULLETTE
                 </p>
             </div>
-            <div class="col-lg-2 col-md-2 col-xs-12 menu-box ">
+            <div class="col-lg-2 col-md-3 col-xs-12 menu-box ">
                 <ul class="ul-menu">
-                    <li><button onclick="" class="login-btn"><i class="fa fa-sign-in"
+                    <li><button  onclick="" class="login-btn"><i class="fa fa-sign-in"
                                 aria-hidden="true"></i> Login</button></li>
                     <li><button onclick="" class="register-button"><i class="fa fa-shield"
                                 aria-hidden="true"></i> Register</button></li>
                 </ul>
             </div>
+
+
+            <div class="cd-user-modal"> <!-- все формы на фоне затемнения-->
+                <div class="cd-user-modal-container"> <!-- основной контейнер -->
+                <ul class="cd-switcher">
+                    <li><a href="#0">Вход</a></li>
+                    <li><a href="#0">Регистрация</a></li>
+                </ul>
+                <div id="cd-login"> <!-- форма входа -->
+                    <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+                        <span class="cd-error-message">Здесь сообщение об ошибке!</span>
+                    </p>
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">Пароль</label>
+                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Пароль">
+                        <a href="#0" class="hide-password">Скрыть</a>
+                        <span class="cd-error-message">Здесь сообщение об ошибке!</span>
+                    </p>
+                    <p class="fieldset">
+                        <input type="checkbox" id="remember-me" checked>
+                        <label for="remember-me">Запомнить меня</label>
+                    </p>
+                    <p class="fieldset">
+                        <input class="full-width" type="submit" value="Войти">
+                    </p>
+                    </form>				
+                    <p class="cd-form-bottom-message"><a href="#0">Забыли свой пароль?</a></p>
+                    <!-- <a href="#0" class="cd-close-form">Close</a> -->
+                </div> <!-- конец блока с формой входа -->
+                <div id="cd-signup"> <!-- блок с формой регистрации -->
+                   <form class="cd-form">
+                      <p class="fieldset">
+                     <label class="image-replace cd-username" for="signup-username">Имя пользователя</label>
+                     <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Имя пользователя">
+                     <span class="cd-error-message">Здесь сообщение об ошибке!</span>
+                      </p>
+                      <p class="fieldset">
+                      <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                      <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                      <span class="cd-error-message">Здесь сообщение об ошибке!</span>
+                       </p>
+                       <p class="fieldset">
+                           <label class="image-replace cd-password" for="signup-password">Пароль</label>
+                       <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Пароль">
+                       <a href="#0" class="hide-password">Скрыть</a>
+                       <span class="cd-error-message">Здесь сообщение об ошибке!</span>
+                        </p>
+                        <p class="fieldset">
+                        <input type="checkbox" id="accept-terms">
+                        <label for="accept-terms">Я согласен с <a href="#0">Условиями</a></label>
+                        </p>
+                        <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Создать аккаунт">
+                        </p>
+                    </form>
+                    <!-- <a href="#0" class="cd-close-form">Закрыть</a> -->
+                </div> <!-- cd-signup -->
+                <div id="cd-reset-password"> <!-- форма восстановления пароля -->
+                    <p class="cd-form-message">Забыли пароль? Пожалуйста, введите адрес своей электронной почты. Вы получите ссылку, чтобы создать новый пароль.</p>
+                    <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                        <span class="cd-error-message">Здесь сообщение об ошибке!</span>
+                    </p>
+                    <p class="fieldset">
+                         <input class="full-width has-padding" type="submit" value="Восстановить пароль">
+                    </p>
+                     </form>
+                             <p class="cd-form-bottom-message"><a href="#0">Вернуться к входу</a></p>
+                   </div> <!-- cd-reset-password -->
+                    <a href="#0" class="cd-close-form">Закрыть</a>
+                </div> <!-- cd-user-modal-container -->
+             </div> <!-- cd-user-modal -->
+             
+
+
 
 
             
