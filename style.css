@@ -104,8 +104,9 @@ iframe{
 }
 
 .footer{
-    background: #131521;
     color:white;
+    z-index: 10;
+    background: #131521;
 }
 
 ul li a{
@@ -191,14 +192,6 @@ ul{
         display: none;
     }
 }
-
-
-
-
-
-
-
-
 
 .panel {
     background-color: #444;
