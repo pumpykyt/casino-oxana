@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
+</head>
+<header>
+    <!-- Live background -->
+    <div class="fullscreen-bg">
+        <video loop muted autoplay class="fullscreen-bg__video">
+            <source src="Images/bgbg.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Menu -->
+    <div class="header-menu fixed-top">
+        <div class="content row">
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <a href="live-casino-index.html"><img class="logo menu-item" src="Images/nnl.png " alt=""></a>
+
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box timer-div">
+                <p class="current-time" id="current-time">f</p>
+
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <a href="casino-slots.html">
+                    <p onclick="" class="menu-item"> <span style="color: #cf3476;">S</span>LOTS</p>
+                </a>
+
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <a href="casino-live-dealers.html">
+                    <p onclick="" class="menu-item"> <span style="color: #cf3476;">L</span>IVE
+                        DEALERS</p>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <a href="casino-roullette.html">
+                    <p onclick="" class="menu-item"> <span style="color: #cf3476;">R</span>OULLETTE
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <ul class="ul-menu">
+                    <li><a href="#login_form"><button onclick="" class="login-btn"><i class="fa fa-sign-in"
+                                    aria-hidden="true"></i> Login</button></a></li>
+                    <li><a href="#join_form"><button onclick="" class="register-button"><i class="fa fa-shield"
+                                    aria-hidden="true"></i>
+                                Register</button></a></li>
+                </ul>
+            </div>
+
+            <a href="#x" class="overlay" id="login_form"></a>
+            <div class="popup">
+
+                <h2>Welcome Guest!</h2>
+                <p>Please enter your login and password here</p>
+                <div>
+                    <label for="login">Login</label>
+                    <input type="text" id="login" value="" />
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" value="" />
+                </div>
+                <input type="button" class="register-button" value="Log In" />
+
+
+                <a class="close" href="#close"></a>
+            </div>
+
+            <a href="#x" class="overlay" id="join_form"></a>
+            <div class="popup">
+                <h2>Sign Up</h2>
+                <p>Please enter your details here</p>
+                <div>
+                    <label for="email">Login (Email)</label>
+                    <input type="text" id="email" value="" />
+                </div>
+                <div>
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" value="" />
+                </div>
+                <div>
+                    <label for="firstname">First name</label>
+                    <input type="text" id="firstname" value="" />
+                </div>
+                <div>
+                    <label for="lastname">Last name</label>
+                    <input type="text" id="lastname" value="" />
+                </div>
+                <input type="button" class="register-button" value="Sign Up" />&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;<a
+                    href="#login_form" id="login_pop">Log In</a>
+
+                <a class="close" href="#close"></a>
+            </div>
+
+        </div>
+    </div>
+</header>
+<main>
+    <div class="slider-wrapper">
+        <div class="flex-container flex-pikachu flex-active" data-slide="1">
+            <div class="flex-item flex-item-left">
+                <div class="flex-content">
+                    <p class="text-sub"></p>
+                    <h1 class="text-big">Card Games</h1>
+                    <p class="text-normal">Here you can play your favourite azart games with the money bets.</p>
+                </div>
+            </div>
+            <div class="flex-item flex-item-right"></div>
+            <img class="pokemon-img" src="Images/igralnye-karty.png" />
+        </div>
+        <div class="flex-container flex-piplup animate-start" data-slide="2">
+            <div class="flex-item flex-item-left">
+                <div class="flex-content">
+                    <p class="text-sub"></p>
+                    <h1 class="text-big">Online payments</h1>
+                    <p class="text-normal">Deposit and withdraw via visa/mastercard without any fee online.</p>
+                </div>
+            </div>
+            <div class="flex-item flex-item-right"></div>
+            <img class="pokemon-img" src="Images/Monobank-card.png" />
+        </div>
+        <div class="flex-container flex-blaziken animate-start" data-slide="3">
+            <div class="flex-item flex-item-left">
+                <div class="flex-content">
+                    <p class="text-sub"></p>
+                    <h1 class="text-big">Adults only</h1>
+                    <p class="text-normal">Only full-aged people can play on our resource. Azart games is aged
+                        restricted.</p>
+                </div>
+            </div>
+            <div class="flex-item flex-item-right"></div>
+            <img class="pokemon-img" src="Images/500px-RARS_18+.svg.webp" />
+        </div>
+
+        <div class="slider-navi">
+            <a href="#" class="slide-nav active" data-slide="1">Card games</a>
+            <a href="#" class="slide-nav" data-slide="2">Visa/Mastercard payments</a>
+            <a href="#" class="slide-nav" data-slide="3">Only adults</a>
+        </div>
+
+    </div>
+
+
+</main>
+<footer>
+    <div class="mt-5 pt-5 pb-5 footer fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-xs-12 about-company">
+                        <h2>Casino Oksana</h2>
+                        <p class="pr-5 text-white-50">Local project created for it-step course work. </p>
+                        <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i
+                                    class="fa fa-linkedin-square"></i></a></p>
+                    </div>
+                    <div class="col-lg-3 col-xs-12 links">
+                        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+                        <ul class="m-0 p-0">
+                            <li>- <a href="#">Gambling</a></li>
+                            <li>- <a href="#">Youtube</a></li>
+                            <li>- <a href="#">Facebook</a></li>
+                            <li>- <a href="#">Instagram</a></li>
+                            <li>- <a href="#">MySpace</a></li>
+                            <li>- <a href="#">Twitter</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-xs-12 location">
+                        <h4 class="mt-lg-0 mt-sm-4">Location</h4>
+                        <p>1488, Germany, Berlin, Reichstag</p>
+                        <p class="mb-0"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
+                        <p><i class="fa fa-envelope-o mr-3"></i>senseandrey@gmail.com viktorkubrakpl@gmail.com</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col copyright">
+                        <p class=""><small class="text-white-50">© 2020. All Rights Reserved.</small></p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="Scripts/script.js"></script>
+
+</html>
