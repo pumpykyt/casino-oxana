@@ -1,0 +1,45 @@
+body {
+    background:url('https://www.dropbox.com/s/7zxkiuyghz7z3ss/black-background.jpg?raw=1');
+   }
+   
+   .jumbotron{
+     margin-top: 5%;
+   }
+   
+   .tab-controller-wrap{
+     margin-top: 30px;
+   }
+   
+   .tab-control, .tab-control:hover, .tab-control.active{
+     color: #fff;
+     text-decoration: none;
+   }
+   
+   .tab-control {
+     padding: 10px 20px;
+     background-color: #12A5F4;
+   }
+   
+   .tab-control:hover{
+     background-color: #70c9f8;
+   }
+   
+   .tab-control.active{
+     background-color: #0a6392;
+   }
+   
+   hr{
+     border: 1px solid #12A5F4;
+   }
+   
+   .tab-wrapper{
+     margin-top: 20px;
+   }
+   
+   .content-wrapper > div{
+     background-color: #fff;
+     padding: 20px;
+     line-height: 200%;
+   }
+   
+   

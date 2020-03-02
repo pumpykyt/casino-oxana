@@ -9,15 +9,19 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Krona+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet/less" type="text/less" href="styles.less">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
-    <title>Roullette</title>
+
+    <title>Live Dealers</title>
 </head>
 
 <header>
     <!-- Live background -->
-    
+    <div class="fullscreen-bg">
+        <video loop muted autoplay class="fullscreen-bg__video">
+            <source src="Images/bgbg.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <!-- Menu -->
     <div class="header-menu fixed-top">
@@ -100,9 +104,55 @@
     </div>
 </header>
 
-<body>
+<body >
+
+<div class="container row">
+
+
+
+    <ul class="nav nav-tabs profile-menu row">
+        <li class=" profile-icon profile-menu-item col-lg-3 active"><a data-toggle="pill" href="#menu1" onclick="clickProfile()">Profile</a></li>
+        <li class=" profile-icon profile-menu-item col-lg-3"><a data-toggle="tab" href="#menu2">Balance</a></li>
+        <li class=" profile-icon profile-menu-item col-lg-3"><a data-toggle="tab" href="#menu3">History</a></li>
+        <li class=" profile-icon profile-menu-item col-lg-3"><a data-toggle="tab" href="#menu4">Sign out</a></li>
+
+      </ul>
     
+      <div class="tab-content">
+        <div id="menu1" class="tab-pane lyaps fade active in">
+            <h3>Hello Nickname</h3>
+          <img class="avatar" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fe1c37ab00ceb849792f00a30df5e4b860a4ca00_full.jpg" alt="">
+            <p>Name: </p>
+            <p>Surname: </p>
+            <p>Balance: </p>
+            <p>Date Registraion: </p>
+            <p>Level: </p>
+
+        </div>
+        <div id="menu2" class="tab-pane menu-prof fade">
+          <h3>Balance</h3>
+          <img class="avatar" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fe1c37ab00ceb849792f00a30df5e4b860a4ca00_full.jpg" alt="">
+        </div>
+        <div id="menu3" class="tab-pane menu-prof fade">
+          <h3>History</h3>
+          <img class="avatar" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fe1c37ab00ceb849792f00a30df5e4b860a4ca00_full.jpg" alt="">
+        </div>
+        <div id="menu4" class="tab-pane menu-prof fade">
+          <h3>Sign Out</h3>
+          <img class="avatar" src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fe1c37ab00ceb849792f00a30df5e4b860a4ca00_full.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
     
+
+
+
+
+
+</div>
+
+
 </body>
 <footer>
     <div class="mt-5 pt-5 pb-5 footer">
@@ -141,5 +191,8 @@
     </div>
 </footer>
 <script src="Scripts/script.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </html>

@@ -336,3 +336,95 @@ a#login_pop:hover, a#join_pop:hover {
 .popup input[type="text"]:hover, .popup input[type="password"]:hover {
     border-color: #555 #888 #888;
 }
+
+
+
+.profile-menu
+{
+    background-color: #1c1d27;
+    float:left;
+    width: 85%;
+    margin-left: 25%;
+    margin-top: 7%;
+}
+
+.profile-menu-item
+{
+    background-color: #131521;
+
+    font-family: 'Krona one';
+}
+
+.profile-icon
+{
+    
+
+}
+.main
+{
+    width: 50%;
+    margin-top: 15%;
+}
+
+
+.tb-tab{
+    display: inline-block;
+    border-color: lightgrey;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    padding: .25em 1em .25em 1em;
+    cursor: pointer;
+  }
+  
+  .tb-tab:hover{
+    background-image: linear-gradient(#ffffff 0%, #ffffff 85%, #dae6f1 100%);
+  }
+  
+  .tb-tab-selected{
+    display: inline-block;
+    border-color: #818486;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    padding: .25em 1em .25em 1em;
+    background-color: #76a2ce;
+    color: #ffffff;
+  }
+  
+  
+  .tb-divider{
+    border: 1px solid #76a2ce;
+    line-height: 2px;
+  }
+
+.profile-menu-item
+{
+    color: #76a2ce;
+}
+
+
+.avatar
+{
+    height: 50%;
+    float: left;
+}
+.tab-content
+{
+    width: 100%;
+    margin-left: 25%;
+    height: 100%;
+    color: white;
+}
+.lyaps
+{
+    background-color: #1c1d27;
+    width: 100%;
+}
+.tab-content p
+{
+    padding-left: 5%;
+}
+
+
+
+
+
