@@ -58,6 +58,59 @@ function clickProfile(){
   menu3.classList.add("fade");
   menu4.classList.add("fade");
 }
+
+function clickBalance(){
+  var menu1 = document.getElementById("menu1");
+
+  var menu2 = document.getElementById("menu2");
+  var menu3 = document.getElementById("menu3");
+  var menu4 = document.getElementById("menu4");
+
+  menu1.classList.add("fade");
+
+  menu2.classList.remove("fade");
+  menu3.classList.add("fade");
+  menu4.classList.add("fade");
+}
+
+function clickHistory(){
+  var menu1 = document.getElementById("menu1");
+
+  var menu2 = document.getElementById("menu2");
+  var menu3 = document.getElementById("menu3");
+  var menu4 = document.getElementById("menu4");
+
+  menu1.classList.add("fade");
+
+  menu2.classList.add("fade");
+  menu3.classList.remove("fade");
+  menu4.classList.add("fade");
+}
+
+function clickSignout(){
+  var menu1 = document.getElementById("menu1");
+
+  var menu2 = document.getElementById("menu2");
+  var menu3 = document.getElementById("menu3");
+  var menu4 = document.getElementById("menu4");
+
+  menu1.classList.add("fade");
+
+  menu2.classList.add("fade");
+  menu3.classList.add("fade");
+  menu4.classList.remove("fade");
+}
+
+
+
+
+
+
+
+
+
+
+
   $('.slide-nav').on('click', function(e) {
     // get current slide
     var current = $('.flex-active').data('slide'),

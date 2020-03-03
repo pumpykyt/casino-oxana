@@ -412,6 +412,10 @@ a#login_pop:hover, a#join_pop:hover {
     color: #76a2ce;
 }
 
+.content-profile
+{
+    margin-left: 25%;
+}
 
 .avatar
 {
@@ -436,7 +440,10 @@ a#login_pop:hover, a#join_pop:hover {
 }
 
 
-
+.menu-prof
+{
+    height: 40%;
+}
 
 
 *, *:before, *:after {
