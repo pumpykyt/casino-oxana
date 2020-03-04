@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using casino_oxana_back.Models
+@model LoginViewModel
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -11,7 +14,7 @@
 </head>
 
 <body>
-    
+
     <header>
         <!-- Live background -->
         <div class="fullscreen-bg">
@@ -24,7 +27,7 @@
         <div class="header-menu fixed-top">
             <div class="content row">
                 <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
-                    <a href="live-casino-index.html"><img class="logo menu-item" src="Content/Images/nnl.png " alt=""></a>
+                    <a href=""><img class="logo menu-item" src="Content/Images/nnl.png " alt=""></a>
 
                 </div>
                 <div class="col-lg-2 col-md-1 col-xs-12 menu-box timer-div">
@@ -38,7 +41,7 @@
 
                 </div>
                 <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
-                    <a href="casino-live-dealers.html">
+                    <a href="@Url.Action("Live","Live")">
                         <p onclick="" class="menu-item">
                             <span style="color: #cf3476;">L</span>IVE
                             DEALERS
@@ -52,45 +55,35 @@
                         </p>
                     </a>
                 </div>
-                <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
-                    <ul class="ul-menu">
-                        <li>
-                            <a href="#login_form">
-                                <button onclick="" class="login-btn">
-                                    <i class="fa fa-sign-in"
-                                       aria-hidden="true"></i> Login
-                                </button>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#join_form">
-                                <button onclick="" class="register-button">
-                                    <i class="fa fa-shield"
-                                       aria-hidden="true"></i>
-                                    Register
-                                </button>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                
+
+                @Html.Partial("_LoginPartial");
+
+
 
                 <a href="#x" class="overlay" id="login_form"></a>
                 <div class="popup">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h2>Welcome Guest!</h2>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <p>Please enter your login and password here</p>
+                        <div>
+                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                        <div>
+                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                        <input type="submit" onclick="" class="register-button" value="Log In" />
 
-                    <h2>Welcome Guest!</h2>
-                    <p>Please enter your login and password here</p>
-                    <div>
-                        <label for="login">Login</label>
-                        <input type="text" id="login" value="" />
-                    </div>
-                    <div>
-                        <label for="password">Password</label>
-                        <input type="password" id="password" value="" />
-                    </div>
-                    <input type="button" class="register-button" value="Log In" />
-
-
-                    <a class="close" href="#close"></a>
+                        <a class="close" href="#close"></a>
+                    }
                 </div>
 
                 <a href="#x" class="overlay" id="join_form"></a>
@@ -121,7 +114,7 @@
             </div>
         </div>
     </header>
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
         <footer>
             <div class="mt-5 pt-5 pb-5 footer fixed-bottom">
@@ -166,8 +159,13 @@
         <script src="Scripts/script.js"></script>
     </div>)
 
+            
+    
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
+
 </html>
