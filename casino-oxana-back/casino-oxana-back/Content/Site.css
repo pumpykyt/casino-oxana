@@ -121,7 +121,6 @@ iframe {
     margin: 0 !important;
     height: 300px;
     font-size: 13px;
-    z-index: 99999;
 }
 
     .show, .footer:hover {
