@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+@model IEnumerable<casino_oxana_back.Models.ApplicationUser>
+
+<style>
+    #container {
+        margin: 0px auto;
+        width: 500px;
+        height: 375px;
+        border: 10px #333 solid;
+    }
+
+    #videoElement {
+        width: 500px;
+        height: 375px;
+        background-color: #666;
+    }
+</style>
+
+<h2>Admin</h2>
+<body>
+    <div id="container">
+        <video autoplay="true" id="videoElement"></video>
+    </div>
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (err0r) {
+                    console.log("Something went wrong!");
+                });
+        }
+    </script>
+    <button class="btn-light">Win</button>
+    <button class="btn-light">Loose</button>
+</body>
+

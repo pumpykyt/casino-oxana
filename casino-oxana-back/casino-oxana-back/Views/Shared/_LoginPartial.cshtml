@@ -10,6 +10,10 @@
             @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        @if (User.IsInRole("Admin"))
+        {
+            <li><a href="@Url.Action("Admin","Admin", new { area = "Admin" })">Admin Panel</a></li>
+        }
     </ul>
     }
 }
