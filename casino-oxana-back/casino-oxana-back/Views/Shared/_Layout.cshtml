@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Krona+One&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 
 <body>
@@ -27,7 +26,7 @@
         <div class="header-menu fixed-top">
             <div class="content row">
                 <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
-                    <a href=""><img class="logo menu-item" src="Content/Images/nnl.png " alt=""></a>
+                    <a href="@Url.Action("Index","Home")"><img class="logo menu-item" src="~/Content/Images/nnl.png " alt=""></a>
 
                 </div>
                 <div class="col-lg-2 col-md-1 col-xs-12 menu-box timer-div">
@@ -55,7 +54,7 @@
                         </p>
                     </a>
                 </div>
-                
+
 
                 @Html.Partial("_LoginPartial");
 
@@ -159,11 +158,13 @@
         <script src="Scripts/script.js"></script>
     </div>)
 
-            
-    
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/script")
+
     @RenderSection("scripts", required: false)
 
 </body>
