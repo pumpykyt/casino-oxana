@@ -12,13 +12,13 @@ namespace casino_oxana_back.Entities
     public class UserBalanceModel
     {
         [Key,ForeignKey("UserOf")]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Required]
         public decimal Balance { get; set; }
         [Required]
         public decimal AllWinningsAmount { get; set; }
         [Required]
-        public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser UserOf { get; set; }
         public string UserId { get; set; }
 
 
