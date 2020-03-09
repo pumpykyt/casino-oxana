@@ -1,9 +1,11 @@
-﻿
+﻿@model IEnumerable<casino_oxana_back.Models.ApplicationUser>
 @{
     ViewBag.Title = "Admin";
+    Layout = null;
 }
 
-@model IEnumerable<casino_oxana_back.Models.ApplicationUser>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
 
 <style>
     #container {
@@ -18,6 +20,7 @@
         height: 375px;
         background-color: #666;
     }
+
 </style>
 
 <h2>Admin</h2>
@@ -38,7 +41,50 @@
                 });
         }
     </script>
-    <button class="btn-light">Win</button>
-    <button class="btn-light">Loose</button>
+    <div class="btn-group-lg align-content-center">
+        <button class="btn-light">Win</button>
+        <button class="btn-light">Loose</button>
+    </div>
+    
+    <table class="table text-white table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/script")
+
 </body>
+
+
 
