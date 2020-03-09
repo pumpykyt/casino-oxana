@@ -17,6 +17,7 @@ namespace casino_oxana_back.Models
             // Add custom user claims here
             return userIdentity;
         }
+
          
     }
 

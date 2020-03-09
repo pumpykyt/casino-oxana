@@ -1,0 +1,272 @@
+﻿@model casino_oxana_back.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Krona+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
+
+    <title>Live Dealers</title>
+</head>
+
+<header>
+    <!-- Live background -->
+    <div class="fullscreen-bg">
+        <video loop muted autoplay class="fullscreen-bg__video">
+            <source src="Images/bgbg.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Menu -->
+    <div class="header-menu fixed-top">
+        <div class="content row">
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <a href="live-casino-index.html"><img class="logo menu-item" src="Images/nnl.png " alt=""></a>
+
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box timer-div">
+                <p class="current-time" id="current-time">f</p>
+
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <a href="casino-slots.html">
+                    <p onclick="" class="menu-item"> <span style="color: #cf3476;">S</span>LOTS</p>
+                </a>
+
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <a href="casino-live-dealers.html">
+                    <p onclick="" class="menu-item">
+                        <span style="color: #cf3476;">L</span>IVE
+                        DEALERS
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <a href="casino-roullette.html">
+                    <p onclick="" class="menu-item">
+                        <span style="color: #cf3476;">R</span>OULLETTE
+                    </p>
+                </a>
+            </div>
+            <div class="col-lg-2 col-md-1 col-xs-12 menu-box">
+                <ul class="ul-menu">
+                    <li>
+                        <a href="#login_form">
+                            <button onclick="" class="login-btn">
+                                <i class="fa fa-sign-in"
+                                   aria-hidden="true"></i> Login
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#join_form">
+                            <button onclick="" class="register-button">
+                                <i class="fa fa-shield"
+                                   aria-hidden="true"></i>
+                                Register
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#x" class="overlay" id="login_form"></a>
+            <div class="popup">
+
+                <h2>Welcome Guest!</h2>
+                <p>Please enter your login and password here</p>
+                <div>
+                    <label for="login">Login</label>
+                    <input type="text" id="login" value="" />
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" value="" />
+                </div>
+                <input type="button" class="register-button" value="Log In" />
+
+
+                <a class="close" href="#close"></a>
+            </div>
+
+            <a href="#x" class="overlay" id="join_form"></a>
+            <div class="popup">
+                <h2>Sign Up</h2>
+                <p>Please enter your details here</p>
+                <div>
+                    <label for="email">Login (Email)</label>
+                    <input type="text" id="email" value="" />
+                </div>
+                <div>
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" value="" />
+                </div>
+                <div>
+                    <label for="firstname">First name</label>
+                    <input type="text" id="firstname" value="" />
+                </div>
+                <div>
+                    <label for="lastname">Last name</label>
+                    <input type="text" id="lastname" value="" />
+                </div>
+                <input type="button" class="register-button" value="Sign Up" />&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;<a href="#login_form" id="login_pop">Log In</a>
+
+                <a class="close" href="#close"></a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<body>
+
+    <div class="container row">
+
+
+
+        <ul class="nav nav-tabs profile-menu row">
+            <li class=" profile-icon profile-menu-item col-lg-3 active">
+                <a data-toggle="pill" href="#menu1"
+                   onclick="clickProfile()">Profile</a>
+            </li>
+            <li class=" profile-icon profile-menu-item col-lg-3">
+                <a data-toggle="tab" href="#menu2"
+                   onclick="clickBalance()">Balance</a>
+            </li>
+            <li class=" profile-icon profile-menu-item col-lg-3">
+                <a data-toggle="tab" href="#menu3"
+                   onclick="clickHistory()">History</a>
+            </li>
+            <li class=" profile-icon profile-menu-item col-lg-3">
+                <a data-toggle="tab" href="#menu4"
+                   onclick="clickSignout()">Sign out</a>
+            </li>
+
+        </ul>
+
+        <div class="tab-content" style="background-color:#1c1d27 ;">
+            <div id="menu1" class="tab-pane lyaps  active in">
+
+                <img class="avatar"
+                     src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fe1c37ab00ceb849792f00a30df5e4b860a4ca00_full.jpg"
+                     alt="">
+                <div class="content-profile">
+
+                    <h3>Hello @Model.UserName</h3>
+                    <p>Name: @Model.UserName </p>
+                    <p>Balance: </p>
+                    <p>Date Registraion: </p>
+                </div>
+
+            </div>
+            <div id="menu2" class="lyaps tab-pane menu-prof fade">
+                <img class="avatar"
+                     src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fe1c37ab00ceb849792f00a30df5e4b860a4ca00_full.jpg"
+                     alt="">
+
+                <div class="content-profile">
+                    <h3>Balance</h3>
+                    <input style="width: 25%;" type="number" class="form-control" id="balance">
+                    <button type="button" class="btn btn-success">Deposit</button>
+                    <button type="button" class="btn btn-danger">Widthraw</button>
+                </div>
+
+            </div>
+            <div id="menu3" class="tab-pane lyaps menu-prof fade">
+                <img class="avatar"
+                     src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/fe/fe1c37ab00ceb849792f00a30df5e4b860a4ca00_full.jpg"
+                     alt="">
+
+                <table>
+                    <tr>
+                        <th>Action</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td>Account created</td>
+                        <td>0.00 UAH</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="menu4" class="tab-pane lyaps menu-prof fade">
+                <h3 style="margin-left: 40%;">Sign Out</h3>
+                <h4 style="margin-left: 40%;">Are you sure?</h4>
+                <button type="button" style="width: 49%;" class="btn btn-success">Yes</button>
+                <button type="button" style="width: 49%;" class="btn btn-danger">No</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+</body>
+<footer>
+    <div class="mt-5 pt-5 pb-5 footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-xs-12 about-company">
+                    <h2>Casino Oksana</h2>
+                    <p class="pr-5 text-white-50">Local project created for it-step course work. </p>
+                    <p>
+                        <a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#">
+                            <i class="fa fa-linkedin-square"></i>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-lg-3 col-xs-12 links">
+                    <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+                    <ul class="m-0 p-0">
+                        <li>- <a href="#">Gambling</a></li>
+                        <li>- <a href="#">Youtube</a></li>
+                        <li>- <a href="#">Facebook</a></li>
+                        <li>- <a href="#">Instagram</a></li>
+                        <li>- <a href="#">MySpace</a></li>
+                        <li>- <a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-xs-12 location">
+                    <h4 class="mt-lg-0 mt-sm-4">Location</h4>
+                    <p>1488, Germany, Berlin, Reichstag</p>
+                    <p class="mb-0"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
+                    <p><i class="fa fa-envelope-o mr-3"></i>senseandrey@gmail.com viktorkubrakpl@gmail.com</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col copyright">
+                    <p class=""><small class="text-white-50">© 2020. All Rights Reserved.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="Scripts/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</html>
+
