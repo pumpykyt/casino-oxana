@@ -209,6 +209,7 @@ C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\o
 C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.csproj.CopyComplete
 C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.dll
 C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.pdb
+<<<<<<< HEAD
 C:\Users\TEMP.itstep.000.001.002\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\bin\casino-oxana-back.dll.config
 C:\Users\TEMP.itstep.000.001.002\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\bin\casino-oxana-back.dll
 C:\Users\TEMP.itstep.000.001.002\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\bin\casino-oxana-back.pdb
@@ -270,3 +271,6 @@ C:\Users\TEMP.itstep.000.001.002\Desktop\casino-oxana\casino-oxana-back\casino-o
 C:\Users\TEMP.itstep.000.001.002\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.csproj.CopyComplete
 C:\Users\TEMP.itstep.000.001.002\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.dll
 C:\Users\TEMP.itstep.000.001.002\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.pdb
+=======
+C:\Users\Admin\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.csprojAssemblyReference.cache
+>>>>>>> 5418ebc59c64ae25ef69d6cbf64896e122ffc092
