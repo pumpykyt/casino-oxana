@@ -17,6 +17,7 @@ namespace casino_oxana_back.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext _context;
 
         public AccountController()
         {
@@ -26,6 +27,7 @@ namespace casino_oxana_back.Controllers
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            _context = new ApplicationDbContext();
         }
 
         public ApplicationSignInManager SignInManager
@@ -156,6 +158,17 @@ namespace casino_oxana_back.Controllers
                 UserManager.AddToRole(UserManager.Users.FirstOrDefault(t => t.Email == model.Email).Id, "User");
                 if (result.Succeeded)
                 {
+
+
+                    _context.userBalanceModels.Add(new Entities.UserBalanceModel {
+
+                        Id = UserManager.Users.FirstOrDefault(t => t.Email == model.Email).Id,
+                        Balance = 100,
+                        UserId = user.Id,
+                        AllWinningsAmount = 0
+                    });
+
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
