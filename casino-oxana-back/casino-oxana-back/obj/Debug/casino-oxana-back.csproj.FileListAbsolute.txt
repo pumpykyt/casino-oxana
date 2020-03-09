@@ -209,3 +209,4 @@ C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\o
 C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.csproj.CopyComplete
 C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.dll
 C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.pdb
+C:\Users\Admin\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.csprojAssemblyReference.cache

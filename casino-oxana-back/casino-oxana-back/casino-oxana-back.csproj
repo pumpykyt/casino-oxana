@@ -231,6 +231,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Admin.cshtml" />
     <Content Include="Areas\User\Views\web.config" />
+    <Content Include="Areas\User\Views\User\User.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -368,7 +369,6 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\User\Data\" />
     <Folder Include="Areas\User\Views\Shared\" />
-    <Folder Include="Areas\User\Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
