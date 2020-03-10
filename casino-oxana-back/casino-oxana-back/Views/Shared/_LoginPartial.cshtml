@@ -14,6 +14,11 @@
         {
             <li><a href="@Url.Action("Admin","Admin", new { area = "Admin" })">Admin Panel</a></li>
         }
+        @if (User.IsInRole("User"))
+        {
+            <li><a href="@Url.Action("Userloh","Userloh", new { area = "User" })">Profile</a></li>
+        }
+
     </ul>
     }
 }
