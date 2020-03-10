@@ -495,16 +495,16 @@
     </div>
     <div class="bet">
         <div class="bet-title bal"><div id="info" style="float: right"></div></div>
-        <input type="number" id="bet" value="100" disabled />
+        <input type="number" id="bet" />
         <div class="bets-holder">
             <div id="red-box" class="boxes">0</div>
             <div id="green-box" class="boxes">0</div>
             <div id="black-box" class="boxes">0</div>
         </div>
         <div class="button-holder">
-            <button id="red" onclick="@Url.Action("Bet", "Roullette", new { betvalue = 100 })">RED</button>
-            <button id="green" onclick="@Url.Action("Bet", "Roullette", new { betvalue = 100 })">GREEN</button>
-            <button id="black" onclick="@Url.Action("Bet", "Roullette", new { betvalue = 100 })">BLACK</button>
+            <button id="red" onclick="Betting()">RED</button>
+            <button id="green" onclick="Betting()">GREEN</button>
+            <button id="black" onclick="Betting()">BLACK</button>
         </div>
 
     </div>
@@ -564,14 +564,14 @@
                     balance += red * 2;
                     profit += parseInt(red);
 
-                    postData('/Account/BetResult', 200);
+                    postData('/Roullette/BetResult', red*2);
 
                 }
                 if (historyColours(x) == "black") {
                     balance += black * 2;
                     profit += parseInt(black);
 
-                    postData('/Account/BetResult', 200);
+                    postData('/Roullette/BetResult', black*2);
 
 
                 }
@@ -579,26 +579,7 @@
                     balance += green * 14;
                     profit += parseInt(green);
 
-                    postData('/Account/BetResult', 200);
-
-
-
-                    //$.post("/Roullette/BetResult",1400,
-                    //    function (data, status) {
-                    //        alert("Data: " + data + "\nStatus: " + status);
-                    //    });
-
-                    //$.ajax({
-                    //    url: '/Roullette/BetResult',             // указываем URL и
-                    //    dataType: "json",                     // тип загружаемых данных
-                    //    success: function (data, textStatus) { // вешаем свой обработчик на функцию success
-                    //        $.each(data, function (i, val) {    // обрабатываем полученные данные
-                    //            /* ... */
-                    //        });
-                    //    }
-                    //});
-
-                    @*@Html.Action("BetResult", "Roullette", new { winvalue = 1400})*@
+                    postData('/Roullette/BetResult', green*14);
 
                 }
                 infoDiv.innerHTML = "+" + profit;
@@ -617,6 +598,14 @@
                 out.style.animation = "";
             }, 7400);
         }
+        }
+
+        function Betting() {
+            if (bettedValue < balance) {
+                var bettedValue = parseInt($('#bet').val());
+                postData('/Roullette/Bet', bettedValue);
+            }
+
         }
 
         function historyColours(c) {
@@ -649,42 +638,45 @@
                 data: {
                     Value: data
                 },
-                success: function (data) {
-                    alert("Good!");
-                    alert("Status: " + data);
-                },
             })
         }
 
-    function updateBet(button) {
-        if (rolling == false) {
-            var bet = document.getElementById("bet").value;
-            if (button == "red") {
-                red += parseInt(bet);
+
+
+        function updateBet(button) {
+            if (parseInt(document.getElementById("bet").value) < balance) {
+                if (rolling == false) {
+                    var bet = document.getElementById("bet").value;
+                    if (button == "red") {
+                        red += parseInt(bet);
+                    }
+                    if (button == "black") {
+                        black += parseInt(bet);
+                    }
+                    if (button == "green") {
+                        green += parseInt(bet);
+                    }
+                    redBox.innerHTML = red;
+                    greenBox.innerHTML = green;
+                    blackBox.innerHTML = black;
+                    balance = balance - bet;
+                    balDiv.innerHTML = balance;
+                } else {
+                    if (button == "clear") {
+                        console.log("clear");
+                        red = 0;
+                        black = 0;
+                        green = 0;
+                        bet = 0;
+                    }
+                    redBox.innerHTML = red;
+                    greenBox.innerHTML = green;
+                    blackBox.innerHTML = black;
+                }
             }
-            if (button == "black") {
-                black += parseInt(bet);
+            else {
+                alert("Deposit your money gipsy!");
             }
-            if (button == "green") {
-                green += parseInt(bet);
-            }
-            redBox.innerHTML = red;
-            greenBox.innerHTML = green;
-            blackBox.innerHTML = black;
-            balance = balance - bet;
-            balDiv.innerHTML = balance;
-        } else {
-            if (button == "clear") {
-                console.log("clear");
-                red = 0;
-                black = 0;
-                green = 0;
-                bet = 0;
-            }
-            redBox.innerHTML = red;
-            greenBox.innerHTML = green;
-            blackBox.innerHTML = black;
-        }
     }
 
     function clearBet() {

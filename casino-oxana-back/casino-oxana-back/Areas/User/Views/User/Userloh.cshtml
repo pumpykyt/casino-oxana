@@ -1,4 +1,5 @@
-﻿@model casino_oxana_back.Models.ApplicationUser
+﻿@using Microsoft.AspNet.Identity;
+@using casino_oxana_back.Models;
 
 @{
     ViewBag.Title = "User";
@@ -166,10 +167,10 @@
                      alt="">
                 <div class="content-profile">
 
-                    <h3>Hello @Model.UserName</h3>
-                    <p>Name: @Model.UserName</p>
-                    <p>Balance: </p>
-                    <p>Date Registraion: </p>
+                    <h3>Hello @User.Identity.GetUserName()</h3>
+                    <p>Name: @User.Identity.GetUserName()</p>
+                    <p>Balance: @User.Identity.GetUserBalance()</p>
+                    <p>Date Registration: 11.03.2020</p>
                 </div>
 
             </div>

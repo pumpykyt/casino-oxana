@@ -16,7 +16,7 @@
         }
         @if (User.IsInRole("User"))
         {
-            <li><a href="@Url.Action("Userloh","Userloh", new { area = "User" })">Profile</a></li>
+            <li><a href="@Url.Action("Userloh","User", new { area = "User" })">Profile</a></li>
         }
 
     </ul>

@@ -16,7 +16,7 @@ namespace casino_oxana_back.Areas.User.Controllers
         ApplicationDbContext _context = new ApplicationDbContext();
         // GET: User/User
         public ActionResult Userloh()
-        {  
+        {
             return View();
         }
     }

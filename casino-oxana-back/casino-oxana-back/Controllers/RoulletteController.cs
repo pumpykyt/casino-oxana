@@ -17,12 +17,34 @@ namespace casino_oxana_back.Controllers
             return View();
         }
 
-        public void Bet(int betvalue)
+        [HttpPost]
+        [Authorize(Roles="User")]
+        public JsonResult Bet(ObjViewModel model)
         {
-            _context.Users.FirstOrDefault(t => t.Id == User.Identity.GetUserId()).Balance -= betvalue;
-            _context.SaveChanges();
+            if (Request.IsAuthenticated)
+            {
+                string thisUserId = User.Identity.GetUserId();
+                _context.Users.FirstOrDefault(t => t.Id == thisUserId).Balance -= model.Value;
+                _context.SaveChanges();
+            }
+
+            return Json("OK");
         }
 
-       
+        [HttpPost]
+        [Authorize(Roles = "User")]
+        public JsonResult BetResult(ObjViewModel model)
+        {
+            if (Request.IsAuthenticated)
+            {
+                string thisUserId = User.Identity.GetUserId();
+                _context.Users.FirstOrDefault(t => t.Id == thisUserId).Balance += model.Value;
+                _context.SaveChanges();
+            }
+
+            return Json("OK");
+        }
+
+
     }
 }
