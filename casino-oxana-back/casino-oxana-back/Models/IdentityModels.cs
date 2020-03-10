@@ -3,7 +3,6 @@ using System.Data.Entity;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
-using casino_oxana_back.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -29,7 +28,6 @@ namespace casino_oxana_back.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        public DbSet<UserBalanceModel> userBalanceModels { get; set; }
 
         public static ApplicationDbContext Create()
         {
@@ -45,5 +43,6 @@ namespace casino_oxana_back.Models
             // Test for null to avoid issues during local testing
             return (claim != null) ? claim.Value : string.Empty;
         }
+
     }
 }

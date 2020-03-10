@@ -563,21 +563,43 @@
                 if (historyColours(x) == "red") {
                     balance += red * 2;
                     profit += parseInt(red);
-                    @Html.Action("BetResult", "Roullette", new { winvalue = 200})
-                    
+
+                    postData('/Account/BetResult', 200);
+
                 }
                 if (historyColours(x) == "black") {
                     balance += black * 2;
                     profit += parseInt(black);
-                    
-                    @Html.Action("BetResult", "Roullette", new { winvalue = 200})
-                    
+
+                    postData('/Account/BetResult', 200);
+
+
                 }
                 if (historyColours(x) == "green") {
                     balance += green * 14;
                     profit += parseInt(green);
-                    @Html.Action("BetResult", "Roullette", new { winvalue = 1400})
-                    
+
+                    postData('/Account/BetResult', 200);
+
+
+
+                    //$.post("/Roullette/BetResult",1400,
+                    //    function (data, status) {
+                    //        alert("Data: " + data + "\nStatus: " + status);
+                    //    });
+
+                    //$.ajax({
+                    //    url: '/Roullette/BetResult',             // указываем URL и
+                    //    dataType: "json",                     // тип загружаемых данных
+                    //    success: function (data, textStatus) { // вешаем свой обработчик на функцию success
+                    //        $.each(data, function (i, val) {    // обрабатываем полученные данные
+                    //            /* ... */
+                    //        });
+                    //    }
+                    //});
+
+                    @*@Html.Action("BetResult", "Roullette", new { winvalue = 1400})*@
+
                 }
                 infoDiv.innerHTML = "+" + profit;
                 console.log("+" + profit);
@@ -595,7 +617,19 @@
                 out.style.animation = "";
             }, 7400);
         }
-    }
+        }
+
+        function historyColours(c) {
+            c = parseInt(c);
+            if (c == 0) {
+                return "green";
+            }
+            if (c % 2 == 0) {
+                return "black";
+            } else {
+                return "red";
+            }
+        }
 
     function loops() {
         timerDiv.style.width = "0%";
@@ -606,6 +640,21 @@
         setTimeout(roll, 5000);
     }
 
+
+
+        function postData(url = '', data = {}) {
+            $.ajax({
+                method: "POST",
+                url: url,
+                data: {
+                    Value: data
+                },
+                success: function (data) {
+                    alert("Good!");
+                    alert("Status: " + data);
+                },
+            })
+        }
 
     function updateBet(button) {
         if (rolling == false) {

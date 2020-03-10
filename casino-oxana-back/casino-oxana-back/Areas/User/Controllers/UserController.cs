@@ -16,21 +16,8 @@ namespace casino_oxana_back.Areas.User.Controllers
         ApplicationDbContext _context = new ApplicationDbContext();
         // GET: User/User
         public ActionResult Userloh()
-        {
-            UserViewModel model = new UserViewModel();
-
-            
-            var userId = User.Identity.GetUserId();
-            var user = _context.Users.FirstOrDefault(t => t.Id == userId);
-            var userInfo = _context.userBalanceModels.FirstOrDefault(t => t.Id == userId);
-
-
-
-            model.Email = model.Email;
-            model.Balance = userInfo.Balance;
-
-
-            return View(user);
+        {  
+            return View();
         }
     }
 }

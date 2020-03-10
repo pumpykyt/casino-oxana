@@ -179,7 +179,6 @@
     <Compile Include="Controllers\LiveController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoulletteController.cs" />
-    <Compile Include="Entities\UserBalanceModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,10 +190,15 @@
     <Compile Include="Migrations\202003092126000_mgBalance.Designer.cs">
       <DependentUpon>202003092126000_mgBalance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003101614045_mg142.cs" />
+    <Compile Include="Migrations\202003101614045_mg142.Designer.cs">
+      <DependentUpon>202003101614045_mg142.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Models.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -376,6 +380,7 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\User\Data\" />
     <Folder Include="Areas\User\Views\Shared\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -394,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003092126000_mgBalance.resx">
       <DependentUpon>202003092126000_mgBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003101614045_mg142.resx">
+      <DependentUpon>202003101614045_mg142.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

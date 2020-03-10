@@ -23,10 +23,6 @@ namespace casino_oxana_back.Controllers
             _context.SaveChanges();
         }
 
-        public void BetResult(int winvalue)
-        {
-            _context.Users.FirstOrDefault(t => t.Id == User.Identity.GetUserId()).Balance += winvalue;
-            _context.SaveChanges();
-        }
+       
     }
 }

@@ -212,3 +212,5 @@ C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\o
 C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.dll
 C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino-oxana-back.pdb
 C:\Users\asense x god\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino_oxana_back.Migrations.mgBalance.resources
+C:\Users\TEMP.itstep.000.001.002\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino_oxana_back.Migrations.mgBalance.resources
+C:\Users\TEMP.itstep.000.001.002\Desktop\casino-oxana\casino-oxana-back\casino-oxana-back\obj\Debug\casino_oxana_back.Migrations.mg142.resources
