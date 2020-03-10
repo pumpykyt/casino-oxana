@@ -1,7 +1,4 @@
-﻿@using casino_oxana_back.Models
-@model LoginViewModel
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -62,32 +59,12 @@
 
                 <a href="#x" class="overlay" id="login_form"></a>
                 <div class="popup">
-                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <h2>Welcome Guest!</h2>
-                        <hr />
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        <p>Please enter your login and password here</p>
-                        <div>
-                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                        </div>
-                        <div>
-                            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
-                        <input type="submit" onclick="" class="register-button" value="Log In" />
-
-                        <a class="close" href="#close"></a>
-                    }
+                  @Html.Partial("~/Views/Shared/_LoginPartialModel.cshtml")
                 </div>
 
                 <a href="#x" class="overlay" id="join_form"></a>
                 <div class="popup">
-                  @Html.Partial("_RegisterForm")
+                  @Html.Partial("~/Views/Shared/_RegisterForm.cshtml")
                 </div>
 
             </div>

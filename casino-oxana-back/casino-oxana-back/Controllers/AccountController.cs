@@ -153,20 +153,14 @@ namespace casino_oxana_back.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Balance = 100 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 UserManager.AddToRole(UserManager.Users.FirstOrDefault(t => t.Email == model.Email).Id, "User");
                 if (result.Succeeded)
                 {
 
 
-                    _context.userBalanceModels.Add(new Entities.UserBalanceModel {
-
-                        Id = UserManager.Users.FirstOrDefault(t => t.Email == model.Email).Id,
-                        Balance = 100,
-                        UserId = user.Id,
-                        AllWinningsAmount = 0
-                    });
+                    
 
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
