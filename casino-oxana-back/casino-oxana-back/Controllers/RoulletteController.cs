@@ -14,10 +14,19 @@ namespace casino_oxana_back.Controllers
         // GET: Roullette
         public ActionResult Roullette()
         {
-            var list = _context.userBalanceModels.ToList();
-            var userId = User.Identity.GetUserId();
-            var user = list.FirstOrDefault(t => t.Id == userId);
-            return View(user);
+            return View();
+        }
+
+        public void Bet(int betvalue)
+        {
+            _context.Users.FirstOrDefault(t => t.Id == User.Identity.GetUserId()).Balance -= betvalue;
+            _context.SaveChanges();
+        }
+
+        public void BetResult(int winvalue)
+        {
+            _context.Users.FirstOrDefault(t => t.Id == User.Identity.GetUserId()).Balance += winvalue;
+            _context.SaveChanges();
         }
     }
 }

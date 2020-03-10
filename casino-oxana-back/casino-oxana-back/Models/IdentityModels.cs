@@ -1,5 +1,7 @@
-﻿using System.Data.Entity;
+﻿using System.Configuration;
+using System.Data.Entity;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Threading.Tasks;
 using casino_oxana_back.Entities;
 using Microsoft.AspNet.Identity;
@@ -12,11 +14,11 @@ namespace casino_oxana_back.Models
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
+            userIdentity.AddClaim(new Claim("Balance", this.Balance.ToString()));
             return userIdentity;
         }
+        public int Balance { get; set; }
 
          
     }
@@ -32,6 +34,16 @@ namespace casino_oxana_back.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+    }
+
+    public static class IdentityExtensions
+    {
+        public static string GetUserBalance(this IIdentity identity)
+        {
+            var claim = ((ClaimsIdentity)identity).FindFirst("Balance");
+            // Test for null to avoid issues during local testing
+            return (claim != null) ? claim.Value : string.Empty;
         }
     }
 }
