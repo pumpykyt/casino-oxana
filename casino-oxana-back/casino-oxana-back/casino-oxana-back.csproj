@@ -172,24 +172,22 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\User\Controllers\UserController.cs" />
-    <Compile Include="Areas\User\Models\UserViewModel.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LiveController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoulletteController.cs" />
-    <Compile Include="Entities\UserBalanceModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003051748376_das.cs" />
-    <Compile Include="Migrations\202003051748376_das.Designer.cs">
-      <DependentUpon>202003051748376_das.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202003092126000_mgBalance.cs" />
     <Compile Include="Migrations\202003092126000_mgBalance.Designer.cs">
       <DependentUpon>202003092126000_mgBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003101615220_done.cs" />
+    <Compile Include="Migrations\202003101615220_done.Designer.cs">
+      <DependentUpon>202003101615220_done.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -375,7 +373,9 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\User\Data\" />
+    <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -389,11 +389,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202003051748376_das.resx">
-      <DependentUpon>202003051748376_das.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003092126000_mgBalance.resx">
       <DependentUpon>202003092126000_mgBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003101615220_done.resx">
+      <DependentUpon>202003101615220_done.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
