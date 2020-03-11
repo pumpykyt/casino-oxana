@@ -18,7 +18,6 @@ namespace casino_oxana_back.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles="User")]
         public JsonResult Bet(ObjViewModel model)
         {
             if (Request.IsAuthenticated)
@@ -32,7 +31,6 @@ namespace casino_oxana_back.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User")]
         public JsonResult BetResult(ObjViewModel model)
         {
             if (Request.IsAuthenticated)

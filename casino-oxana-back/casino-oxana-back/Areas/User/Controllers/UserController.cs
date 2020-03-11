@@ -19,5 +19,17 @@ namespace casino_oxana_back.Areas.User.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public JsonResult Bet(ObjViewModel model)
+        {
+            if (Request.IsAuthenticated)
+            {
+                string thisUserId = User.Identity.GetUserId();
+                _context.Users.FirstOrDefault(t => t.Id == thisUserId).Balance += model.Value;
+                _context.SaveChanges();
+            }
+
+            return Json("OK");
+        }
     }
 }

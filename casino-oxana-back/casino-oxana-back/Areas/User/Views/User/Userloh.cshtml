@@ -182,8 +182,8 @@
                 <div class="content-profile">
                     <h3>Balance</h3>
                     <input style="width: 25%;" type="number" class="form-control" id="balance">
-                    <button type="button" class="btn btn-success">Deposit</button>
-                    <button type="button" class="btn btn-danger">Widthraw</button>
+                    <button onlcick="depositbtn()" type="button" class="btn btn-success">Deposit</button>
+                    <button onlcick="withdrawbtn()" type="button" class="btn btn-danger">Widthraw</button>
                 </div>
 
             </div>
@@ -270,4 +270,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </html>
+<script type="text/javascript">
 
+    function postData(url = '', data = {}) {
+            $.ajax({
+                method: "POST",
+                url: url,
+                data: {
+                    Value: data
+                },
+            })
+    }
+    function deposit() {
+        postData('Userloh/depositbtn', $('balance').val())
+    }
+
+
+</script>
